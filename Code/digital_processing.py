@@ -1,7 +1,7 @@
 from scipy import signal
 import matplotlib.pyplot as plt
 import numpy as np
-import pyyawt
+# import pyyawt
 
 
 def notch_filter(x, samplerate, plot=False):
@@ -58,7 +58,7 @@ def plot_signal(x, samplerate, chname):
     plt.show()
 
 
-def denoisewavelet(x1, level=5):
-    xd, cxd, lxd = pyyawt.wden(x1, 'minimaxi', 's', 'mln', level, 'db5')
-    return xd
+# def denoisewavelet(x1, level=5):
+#     xd, cxd, lxd = pyyawt.wden(x1, 'minimaxi', 's', 'mln', level, 'db5')
+#     return xd
 

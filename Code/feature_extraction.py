@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import math
 import matplotlib.pyplot as plt
-import pywt
+# import pywt
 
 
 def features_estimation(signal, channel_name, fs, frame, step, plot=False):
@@ -218,20 +218,20 @@ def median_freq(frequency, power):
     return frequency[i]
 
 
-def wavelet_energy(x, mother, nivel):
-    coeffs = pywt.wavedecn(x, wavelet=mother, level=nivel)
-    arr, _ = pywt.coeffs_to_array(coeffs)
-    Et = np.sum(arr ** 2)
-    cA = coeffs[0]
-    Ea = 100 * np.sum(cA ** 2) / Et
-    Ed = []
+# def wavelet_energy(x, mother, nivel):
+#     coeffs = pywt.wavedecn(x, wavelet=mother, level=nivel)
+#     arr, _ = pywt.coeffs_to_array(coeffs)
+#     Et = np.sum(arr ** 2)
+#     cA = coeffs[0]
+#     Ea = 100 * np.sum(cA ** 2) / Et
+#     Ed = []
 
-    for k in range(1, len(coeffs)):
-        cD = list(coeffs[k].values())
-        cD = np.asarray(cD)
-        Ed.append(100 * np.sum(cD ** 2) / Et)
+#     for k in range(1, len(coeffs)):
+#         cD = list(coeffs[k].values())
+#         cD = np.asarray(cD)
+#         Ed.append(100 * np.sum(cD ** 2) / Et)
 
-    return Ea, Ed
+#     return Ea, Ed
 
 
 def next_power_of_2(x):
